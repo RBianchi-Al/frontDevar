@@ -3,7 +3,6 @@ import {Container} from './styles';
 import closeImg from '../../photos/close.svg'
 import { FormEvent, useState } from 'react';
 import api from '../../services/api';
-
 Modal.setAppElement('#root')
 
 interface NewClassesModalProps{
@@ -14,16 +13,16 @@ interface NewClassesModalProps{
 export function NewClassesModal({isOpen, onRequestClose}:NewClassesModalProps){
     const [name, setName] = useState('')
     const [model, setModel] = useState('')
-    // const [date, setDate] = useState(Date)
+    const [date, setDate] = useState(Date)
 
     function handleCreateNewClasses(event: FormEvent){
         event.preventDefault()
        const data = ({
             name, 
             model,
-           
+            date
         })
-        api.post("/classes", data)
+        api.post('/classes', data)
     }
     return(
     <Modal 
@@ -44,15 +43,14 @@ export function NewClassesModal({isOpen, onRequestClose}:NewClassesModalProps){
              onChange={event => setName(event.target.value)}
 
              />
-             {/* <input
+             <input
              placeholder="Data"
              type="date"
-
              value={date}
              onChange={event => setDate(event.target.value)}
              
 
-             /> */}
+             />
             
              <input
              placeholder="Módulo"
