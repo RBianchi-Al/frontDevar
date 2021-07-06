@@ -12,3 +12,6 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Não foram implementadas as rotas de autenticação, delete e put. 
+<p align="center">
+  <img width="460" height="300" src="src/photos/cadastrogif.gif">
+</p>
